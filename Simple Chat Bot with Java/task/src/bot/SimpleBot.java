@@ -1,16 +1,16 @@
 package bot;
+
 import java.util.Scanner;
 
 public class SimpleBot {
     final static Scanner scanner = new Scanner(System.in); // Do not change this line
 
     public static void main(String[] args) {
-        greet("Aid", "2018"); // change it as you need
+        greet("AI", "2024");
         remindName();
         guessAge();
         count();
         testProgrammingKnowledge();
-        // ...
         end();
     }
 
@@ -50,20 +50,19 @@ public class SimpleBot {
         System.out.println("2. To decompose a program into several small subroutines.");
         System.out.println("3. To determine the execution time of a program.");
         System.out.println("4. To interrupt the execution of a program.");
-        int number = scanner.nextInt();
-        if (number > 4) {
-            System.out.println("Please choose a valid number");
-        } else if (number == 2) {
-            break;
+        int answer;
+        for (; ; ) {
+            Scanner check = new Scanner(System.in);
+            answer = check.nextInt();
+            if (answer == 2) {
+                break;
+            } else if ((answer <= 0) || (answer > 4)) {
+                System.out.println("Please enter a valid choice");
+            } else {
+                System.out.println("Please, try again.");
+            }
         }
-        else {
-            System.out.println("Please, try again.");
-        }
-    }
 
-    static void test() {
-        System.out.println("Let's test your programming knowledge.");
-        // write your code here
     }
 
     static void end() {
